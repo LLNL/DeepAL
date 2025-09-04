@@ -23,6 +23,7 @@ Step 2: Run the DeepAL framework (in terminal)
     (2) ensemble model:
         cd scripts
         bash run_mp.sh
+        
 Step 3: Run the post analysis notebook (notebooks/result.ipynb)
 
 
