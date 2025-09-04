@@ -1,0 +1,45 @@
+{
+    "model": {
+      "n_clusters": 19,
+      "memory_efficient": false, 
+      "perform_clustering": false,
+       "representation_model": {
+        "model_class": "ActiveFE",
+        "params": {
+          "num_nodes": 356,
+          "embedding_d": 50,
+          "eps": 0.1,
+          "update_embedding": true 
+          }
+       },
+       "regression_model": {
+        "model_class": "Bilinear",
+        "params": {
+          "use_keops": true
+        } 
+      }
+    },
+
+    "training": {
+        "train_jointly": true,
+        "n_iter": 50,
+        "device": "gpu",
+        "num_epoch_joint": 150,
+        "learning_rate_regression": 0.1, 
+        "learning_rate_embedding": 0.01, 
+        "weight_decay_reg": 0.001, 
+        "weight_decay_embd": 0.0001, 
+        "learning_rate_decay": 0.5,
+        "num_epoch_alternating": 5,
+        "num_epoch_embedding": 10,
+        "num_epoch_regressor": 10,
+        "update_embedding": true
+    },
+    "base_checkpoint_dir": "outputs/representation_learning/models/FE/mp", 
+    "base_pred_dir": "outputs/predictions/models/FE/mp",
+    "base_embedding_dir": "outputs/representation_learning/embeddings/mp",
+    
+    "logging_interval": 5,
+    "perform_hindsight": true 
+  }
+  

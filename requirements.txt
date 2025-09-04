@@ -1,0 +1,9 @@
+matplotlib==3.5.1
+numpy==1.22.3
+pandas==1.4.2
+ray==2.4.0
+scikit_learn==1.2.2
+scipy==1.5.4
+seaborn==0.11.2
+torch==2.4.1
+torch-geometric==2.6.1

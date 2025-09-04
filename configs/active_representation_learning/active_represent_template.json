@@ -1,0 +1,50 @@
+{
+    "model": {
+      "n_clusters": 19,
+      "memory_efficient": false, 
+      "perform_clustering": false,
+       "representation_model": {
+        "model_class": "ActiveGNN",
+        "params": {
+          "node_dim": 200,
+          "embedding_d": 50,
+          "hidden_dim": 128, 
+          "num_conv_layers": 1,
+          "eps": 0.1,
+          "num_epoch_init": 1,
+          "lambda_ewc": null,
+          "update_embedding": false
+          }
+       },
+       "regression_model": {
+        "model_class": "DeepGP",
+        "params": {
+          "use_keops": true
+        } 
+      }
+    },
+
+    "training": {
+        "train_jointly": true,
+        "n_iter": 50,
+        "device": "gpu",
+        "num_epoch_joint": 10,
+        "learning_rate_regression": 0.001, 
+        "learning_rate_embedding": 0.001, 
+        "weight_decay_reg": 0.001, 
+        "weight_decay_embd": 0, 
+        "learning_rate_decay": 0.9,
+        "num_epoch_alternating": 5,
+        "num_epoch_embedding": 10,
+        "num_epoch_regressor": 10,
+        "update_embedding": false
+    },
+
+    "data_file": "data/kg.pt",
+    "base_checkpoint_dir": "outputs/representation_learning/models/GNN",
+    "base_embedding_dir": "outputs/representation_learning/embeddings",
+    
+    "logging_interval": 5,
+    "perform_hindsight": true 
+  }
+  
